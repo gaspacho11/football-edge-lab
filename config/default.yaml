@@ -1,0 +1,21 @@
+protocol:
+  name: FOOTBALL_EDGE_V3
+  paper_only: true
+  require_snapshot_before_kickoff: true
+  forbid_result_columns_during_prediction: true
+
+snapshots:
+  target_minutes_before_kickoff: [4320, 2880, 1440, 720, 360, 180, 60, 30, 10]
+
+walk_forward:
+  min_train_matches: 1000
+  validation_days: 60
+  test_days: 60
+  step_days: 60
+
+coverage:
+  thresholds: [0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00]
+
+model:
+  residual_C: 0.5
+  random_state: 20261015
